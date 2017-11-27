@@ -33,7 +33,10 @@
 Docstrings are courtesy of ISO 10303-11:1994(E)
 """
 
-class NUMBER:
+# support python 2 and 3
+from __future__ import print_function
+
+class NUMBER(object):
     """
     EXPRESS definition:
     ===================
@@ -52,7 +55,7 @@ class NUMBER:
     """
     pass
            
-class REAL(float,NUMBER):
+class REAL(float, NUMBER):
     """
     EXPRESS definition:
     ===================
@@ -83,7 +86,7 @@ class REAL(float,NUMBER):
     """
     pass
 
-class INTEGER(int,NUMBER):
+class INTEGER(int, NUMBER):
     """
     EXPRESS definition:
     ===================
@@ -128,12 +131,12 @@ class STRING(str):
     Substrings and individual characters may be addressed using subscripts as described in 12.5.
     The case (upper or lower) of letters within a string is significant.
     
-    Python mapping: INTEGER is mapped the 'str' type. An additional width_spec parameter can be passed
+    Python mapping: STRING is mapped the 'str' type. An additional width_spec parameter can be passed
     to handle the FIXED length constraint
     """
     pass
     
-class LOGICAL:
+class LOGICAL(object):
     """
     The logical data type has as its domain the three literals true, false and unknown.
     Syntax:
@@ -192,25 +195,24 @@ class BINARY(str):
                 raise ValueError("The BINARY width %i is not consistent with the 'width' declaration(%i)"%(len(value),width))
         # Check that the value passed is actually a binary
         try:
-            int(value,2)
+            int(value, 2)
         except ValueError:
             raise ValueError("%s is not a binary"%value)
 
 
 if __name__=="__main__":
-    print "Creating REAL from float value"
+    print("Creating REAL from float value")
     a = REAL(1.5)
-    print a*2
-    print "Creating REAL from string value"
+    print(a*2)
+    print("Creating REAL from string value")
     a = REAL("1.2")
-    print a*3
-    print "Creating INTEGER from int value"
+    print(a*3)
+    print("Creating INTEGER from int value")
     b = INTEGER(2)
     c = INTEGER(3)
-    print b+c
-    print "Creating INTEGER from string value"
+    print(b+c)
+    print("Creating INTEGER from string value")
     e = INTEGER("5")
     f = INTEGER("8")
-    print e*f
-    
+    print(e*f)
     

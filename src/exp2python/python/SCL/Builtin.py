@@ -29,12 +29,16 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# support python 2 and 3
+from __future__ import print_function
+
 __doc__ = "This module defines EXPRESS built in constants and functions"
+
 import math
 
-from SimpleDataTypes import *
-from BaseType import Aggregate
-from AggregationDataTypes import *
+from SCL.SimpleDataTypes import *
+from SCL.BaseType import Aggregate
+from SCL.AggregationDataTypes import *
 
 SCL_float_epsilon = 1e-7
 # Builtin constants
@@ -43,7 +47,7 @@ SCL_float_epsilon = 1e-7
 # ===================
 #14.1 CONST_E is a REAL constant representing the mathematical value e, the base of the natural
 #logarithm function (ln).
-CONST_E = REAL(math.pi)
+CONST_E = REAL(math.e)
 
 # EXPRESS definition:
 # ===================
@@ -626,7 +630,7 @@ def TYPEOF(V):
         v_types.add(to_add)
     # recursively adds the base class names
     for base_type in type(V).__bases__:
-        #print base_type
+        #print(base_type)
         if not base_type == object:
             v_types = v_types.union(TYPEOF(base_type))
     # finally, converts the v_types set to SET

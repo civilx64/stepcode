@@ -1,6 +1,6 @@
-#
-# STEP Part 21 Parser
-#
+'''
+STEP Part 21 Parser
+'''
 # Copyright (c) 2011, Thomas Paviot (tpaviot@gmail.com)
 # Copyright (c) 2014, Christopher HORLER (cshorler@googlemail.com)
 #
@@ -33,6 +33,9 @@
 # ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# support python 2 and 3
+from __future__ import print_function
 
 import logging
 
@@ -138,8 +141,8 @@ class Lexer(object):
             t.lexer.lineno += t.value[0:offset].count('\n')
             t.lexer.skip(offset)
     
-    # Comment (ignored)
     def t_COMMENT(self, t):
+        """Comment (ignored)"""
         r'/\*(.|\n)*?\*/'
         t.lexer.lineno += t.value.count('\n')
     
@@ -156,8 +159,8 @@ class Lexer(object):
         r'ENDSEC;'
         return t
 
-    # Keywords
     def t_STANDARD_KEYWORD(self, t):
+        """Keywords"""
         r'(?:!|)[A-Za-z_][0-9A-Za-z_]*'
         if self.compatibility_mode:
             t.value = t.value.upper()
@@ -488,3 +491,4 @@ def test():
 
 if __name__ == '__main__':
     test()
+

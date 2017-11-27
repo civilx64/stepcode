@@ -29,9 +29,13 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-from SimpleDataTypes import *
-from TypeChecker import check_type
-import BaseType
+# support python 2 and 3
+from __future__ import division
+from __future__ import print_function
+
+from SCL.SimpleDataTypes import *
+from SCL.TypeChecker import check_type
+import SCL.BaseType
 
 class BaseAggregate(object):
     """ A class that define common properties to ARRAY, LIST, SET and BAG.

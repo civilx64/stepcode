@@ -29,6 +29,9 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# support python 2 and 3
+from __future__ import print_function
+
 class Type(object):
     '''
     A type can be defined from its name and scope
@@ -65,5 +68,5 @@ if __name__ == "__main__":
     class line:
         pass
     new_type = Type('lie',scp)
-    print new_type.get_type()
+    print(new_type.get_type())
     
