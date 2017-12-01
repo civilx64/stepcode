@@ -33,7 +33,7 @@
 from __future__ import print_function
 
 from SCL.ConstructedDataTypes import ENUMERATION, SELECT
-import SCL.BaseType
+import SCL.BaseType as BaseType
 
 RAISE_EXCEPTION_IF_TYPE_DOES_NOT_MATCH = True
 DEBUG = False

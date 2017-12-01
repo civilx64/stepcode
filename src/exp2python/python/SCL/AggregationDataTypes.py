@@ -33,9 +33,9 @@
 from __future__ import division
 from __future__ import print_function
 
-from SCL.SimpleDataTypes import *
-from SCL.TypeChecker import check_type
-import SCL.BaseType
+import SCL.SimpleDataTypes as SimpleDataTypes
+from SCL.TypeChecker import check_type 
+import SCL.BaseType as BaseType
 
 class BaseAggregate(object):
     """ A class that define common properties to ARRAY, LIST, SET and BAG.
