@@ -29,9 +29,12 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# support python 2 and 3
+from __future__ import print_function
+
 import sys
 from enum import Enum
-import BaseType
+import SCL.BaseType as BaseType
 
 class ENUMERATION(Enum):
     """
@@ -57,7 +60,9 @@ class ENUMERATION(Enum):
     >>> if race_position == ahead_or_behind.ahead:
     ...   # do stuff! 
     """
-    pass
+    def __init__(self, *args, **kwargs):
+        super(ENUMERATION, self).__init__()
+
        
 class SELECT(object):
     """ A select data type has as its domain the union of the domains of the named data types in
@@ -66,7 +71,7 @@ class SELECT(object):
     """
     def __init__(self,*kargs,**args):
         # first defining the scope
-        if args.has_key('scope'):
+        if 'scope' in args:
             self._scope = args['scope']
         else:
             self._scope = None

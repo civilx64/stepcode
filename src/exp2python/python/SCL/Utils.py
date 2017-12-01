@@ -29,7 +29,10 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-''' This module provide string utils'''
+''' This module provides string utils.'''
+
+# support python 2 and 3
+from __future__ import print_function
 
 def process_nested_parent_str(attr_str,idx=0):
     '''
@@ -61,10 +64,8 @@ def process_nested_parent_str(attr_str,idx=0):
     return params,k
 
 if __name__=="__main__":
-    print process_nested_parent_str2("'A'")[0]
-    print process_nested_parent_str2("30.0,0.0,5.0")[0]
-    print process_nested_parent_str2("1,2,(3,4,5),6,7,8")[0]
-    print process_nested_parent_str2("(#9149,#9166),#9142,.T.")[0]
-
-
+    print(process_nested_parent_str2("'A'")[0])
+    print(process_nested_parent_str2("30.0,0.0,5.0")[0])
+    print(process_nested_parent_str2("1,2,(3,4,5),6,7,8")[0])
+    print(process_nested_parent_str2("(#9149,#9166),#9142,.T.")[0])
 

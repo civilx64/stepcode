@@ -29,11 +29,14 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-class Model(objet):
+# support python 2 and 3
+from __future__ import print_function
+
+class Model(object):
     """ The container for entity instances
     """
     def __init_(self):
-        print "Model initialized"
+        print("Model initialized")
         self._instances = []
     
     def add_instance(self, entity_instance):
@@ -50,6 +53,4 @@ class Model(objet):
     
     def export_to_p28file(self, filename):
         raise AssertionError("Not implemented")
-
-
 

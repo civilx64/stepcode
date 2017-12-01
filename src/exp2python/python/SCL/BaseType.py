@@ -29,6 +29,9 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# support python 2 and 3
+from __future__ import print_function
+
 class Type(object):
     '''
     A type can be defined from its name and scope
@@ -46,7 +49,7 @@ class Type(object):
         if type(self._typedef) == str:
             if self._scope == None:
                 raise AssertionError('No scope defined for this type')
-            elif vars(self._scope).has_key(self._typedef):
+            elif self._typedef in vars(self._scope):
                 return vars(self._scope)[self._typedef]
             else:
                 raise TypeError("Type '%s' is not defined in given scope"%self._typedef)
@@ -65,5 +68,5 @@ if __name__ == "__main__":
     class line:
         pass
     new_type = Type('lie',scp)
-    print new_type.get_type()
+    print(new_type.get_type())
     
