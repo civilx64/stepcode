@@ -32,6 +32,7 @@
 ''' This module provides string utils.'''
 
 # support python 2 and 3
+''' This module provide string utils'''
 from __future__ import print_function
 
 def process_nested_parent_str(attr_str,idx=0):
@@ -68,4 +69,9 @@ if __name__=="__main__":
     print(process_nested_parent_str2("30.0,0.0,5.0")[0])
     print(process_nested_parent_str2("1,2,(3,4,5),6,7,8")[0])
     print(process_nested_parent_str2("(#9149,#9166),#9142,.T.")[0])
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 8bf6f74bb87c11d8a14008052585cb7994b312d7
 

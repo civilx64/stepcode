@@ -1,3 +1,4 @@
+from __future__ import print_function
 # Copyright (c) 2011, Thomas Paviot (tpaviot@gmail.com)
 # All rights reserved.
 
@@ -43,7 +44,7 @@ def cast_python_object_to_aggregate(obj, aggregate):
     [1.,2.,3.]-> ARRAY(1,3,REAL)"""
     aggregate_lower_bound = aggregate.bound_1()
     aggregate_upper_bound = aggregate.bound_2()
-    if type(obj)==list:
+    if isinstance(obj, list):
         for idx in range(aggregate_lower_bound,aggregate_upper_bound+1):
             aggregate[idx] = obj[idx-aggregate_lower_bound]
     return aggregate
@@ -78,7 +79,7 @@ def check_type(instance, expected_type):
                 return False
     elif (isinstance(expected_type, BaseType.Aggregate)):
         # first check that they are instance of the same class
-        if not (type(instance) == type(expected_type)):
+        if not (isinstance(instance, type(expected_type))):
             raise TypeError('Expected %s but passed %s'%(type(expected_type),type(instance)))
         # then check that the base type is the same
         elif not (instance.get_type() == expected_type.get_type()):

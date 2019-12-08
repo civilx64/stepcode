@@ -56,7 +56,7 @@ void print_schemas_separate( Express express, FILES * files )
 /*
  * Generates the C++ files corresponding to a list of schemas.  Does so in
  * multiple passes through the schemas.  In each pass it checks for enti-
- * ties which are subtypes of entites in other schemas which have not yet
+ * ties which are subtypes of entities in other schemas which have not yet
  * been processed.  Such entities cannot be processed in that pass until
  * their supertypes have been defined.  It also checks for entities which
  * have enum or select attributes which have not been processed, and for
@@ -498,7 +498,7 @@ static int checkItem( Type t, Scope parent, Schema schema, int * unknowncnt,
                     parent->search_id = NOTKNOWN;
                     /* We lower parent's value.  But don't return TRUE.  That
                     // would tell checkTypes() that there's nothing more to
-                    // check.  But checkTypes should keep looping thru the re-
+                    // check.  But checkTypes should keep looping through the re-
                     // maining items of parent - maybe one of them will tell us
                     // that parent definitely can't be processed this pass. */
                     ( *unknowncnt )++;

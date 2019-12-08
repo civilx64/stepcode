@@ -32,6 +32,7 @@
 """
 Docstrings are courtesy of ISO 10303-11:1994(E)
 """
+from __future__ import print_function
 
 # support python 2 and 3
 from __future__ import print_function
@@ -188,7 +189,7 @@ class BINARY(str):
         self._fixed = fixed
         # Check implicit width
         if (width!=-1) and not fixed:
-            raise ValueError("The 'width' parameter is passed but 'fixed' is still false. Please explicitely set 'fixed' to True to avoid implicit declaration")
+            raise ValueError("The 'width' parameter is passed but 'fixed' is still false. Please explicitly set 'fixed' to True to avoid implicit declaration")
         # First check the string length if 'fixed' is set to True
         if fixed:
             if len(value) != width:

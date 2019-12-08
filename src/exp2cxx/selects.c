@@ -376,7 +376,7 @@ void non_unique_types_vector( const Type type, int * tvec ) {
             tvec[tnumber]++;
             break;
         default:
-            fprintf( stderr, "non_unique_types_vector: can't handle unknow type %d\n",
+            fprintf( stderr, "non_unique_types_vector: can't handle unknown type %d\n",
                      TYPEget_body( t )->type );
             abort();
     }
@@ -1940,5 +1940,5 @@ void TYPEselect_print( Type t, FILES * files, Schema schema ) {
 
 
 /**************************************************************************
-********        END  of SELECT TYPE
+********        END of SELECT TYPE
 **************************************************************************/

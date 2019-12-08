@@ -101,7 +101,7 @@ float STEPfile::GetWriteProgress() const {
  * returns an error descriptor.
  * It expects to find the "HEADER;" symbol at the beginning of the istream.
  *
- * side effects: The function  gobbles all characters up to and including the
+ * side effects: The function gobbles all characters up to and including the
  * next "ENDSEC;" from in.
  * The STEPfile::_headerInstances may change.
  */
@@ -341,7 +341,7 @@ SDAI_Application_instance * STEPfile::HeaderDefaultFileSchema() {
  * If the _headerInstances contain no instances, then copy the instances
  * from im onto the _headerInstances.
  * This only works for an instance manager which contains the following
- * header section entites. The file id numbers are important.
+ * header section entities. The file id numbers are important.
  *
  * #1 = FILE_DESCRIPTION
  * #2 = FILE_NAME
